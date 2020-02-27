@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css')}}">
+<script src="{{ url_for('static', filename='js/indexTable.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h2>Software Packages</h2>
+  {% if packages|length < 1 %}
+  <h4>No software packges found.</h4>
+  {% else %}
+  <label>
+    Show
+    <select id="rowsToShow">
+      <option value=10 selected>10</option>
+      <option value=25>25</option>
+      <option value=50>50</option>
+      <option value=100>100</option>
+      <option value="{{row_amount}}">{{row_amount}}</option>
+    </select>
+    packages
+  </label>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Version</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Section</th>
+      </tr>
+    </thead>
+    <tbody id="packageTable">
+      {% for package in packages %}
+      <tr>
+        <td><a href="/{{package.name}}">{{ package.name }}</a></td>
+        <td>{{ package.version }}</td>
+        <td>{{ package.status }}</td>
+        <td>{{ package.priority }}</td>
+        <td>{{ package.section }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div id="showingInfo"></div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'base.html'%}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/detail.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h2>Software Package: {{query_name}}</h2>
+  {% if package is none %}
+  <h4>No details found</h4>
+  <p>
+    <small>
+      Unfortunately system's software status file does not contain any
+      information about such package <i>({{query_name}})</i>. On Debian and
+      Ubuntu systems file: /var/lib/dpkg/status keeps information of known
+      software packages. The file in question does not know anything about such
+      package.
+    </small>
+  </p>
+  {% else %}
+  <h3>Details</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Field Name</th>
+        <th>Field Value</th>
+      </tr>
+    </thead>
+    <tbody class="packageDetails">
+      <tr>
+        <td>Name</td>
+        <td>{{package.name}}</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>{{package.description}}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>{{package.status}}</td>
+      </tr>
+      <tr>
+        <td>Priority</td>
+        <td>{{package.priority}}</td>
+      </tr>
+      <tr>
+        <td>Version</td>
+        <td>{{package.version}}</td>
+      </tr>
+      <tr>
+        <td>Section</td>
+        <td>{{package.section}}</td>
+      </tr>
+      <tr>
+        <td>Dependencies</td>
+        {% if package.dependencies|length < 1 %}
+        <td>No dependencies</td>
+        {% else %}
+        <td>
+          <table class="packageDependencies">
+            <thead>
+              <tr>
+                <th>Package(s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for packages in package.dependencies %}
+              <tr>
+                <td>
+                  <ul>
+                    {% for dep_pack in packages %}
+                    <li>
+                      <a href="/{{dep_pack}}">{{dep_pack}}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </td>
+        {% endif %}
+      </tr>
+      <tr>
+        <td>Reverse dependencies</td>
+        {% if reverse_dependencies|length < 1 %}
+        <td>No other packages depend on this package</td>
+        {% else %}
+        <td>
+          <table class="packageReverseDependencies">
+            <thead>
+              <tr>
+                <th>Package</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for package in reverse_dependencies %}
+              <tr>
+                <td><a href="/{{package}}">{{package}}</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </td>
+        {% endif %}
+      </tr>
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block body %}
+<div class="content">
+  <h2>Software Package Explorer</h2>
+  <p class="aboutIngress">
+    On a Debian and Ubuntu systems, there is a file called /var/lib/dpkg/status
+    that holds information about software packages that the system knows about.
+    This web application exposes some key information about packages in the
+    aformentioned file by providing you an easy-to-use interface to navigate,
+    explore and learn about such packages.
+    Begin your journey by navigating to the home page by clicking the
+    link <i><b>Packages</b></i> in the top-left-hand-corner and deep dive
+    straight into the core of this system's software packages and their
+    dependencies by exploring each package link.
+  </p>
+
+  <p>
+    This web application is built using <b>Python3.6</b> and <b>Flask</b>.
+  </p>
+
+</div>
+{% endblock %}

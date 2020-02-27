@@ -1,0 +1,14 @@
+td, th{ vertical-align: top; text-align: left; }
+
+thead{ display: none;}
+.packageDetails > tr > td:nth-child(odd){width: 200px;}
+.packageDetails > tr:nth-child(even) { background-color: #f2f2f2;}
+
+td:nth-child(odd){ font-weight: bold; }
+
+table{ width: 100%; border-spacing: 0px;}
+.packageDependencies{ width: 100%; }
+.packageDependencies ul{margin: 0; padding: 0;}
+.packageDependencies ul li { list-style: none; display: inline; }
+.packageDependencies ul li:after { content: " OR "; }
+.packageDependencies ul li:last-child:after { content: none; }
