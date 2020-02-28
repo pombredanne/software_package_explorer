@@ -1,10 +1,8 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) and (max-device-width: 600px){
     td { display:none; !important}
     th { display:none; !important}
     td:nth-child(1) { display:table-cell; !important}
     th:nth-child(1) { display:table-cell; !important}
-
-
 }
 table{ width: 100%; margin-top: 10px; }
 tbody tr:nth-child(odd){ background-color: #f2f2f2; }
