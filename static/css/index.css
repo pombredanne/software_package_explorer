@@ -1,8 +1,8 @@
 @media only screen and (max-width: 600px) {
-    td { display:none; }
-    th { display:none; }
-    td:nth-child(1) { display:table-cell; }
-    th:nth-child(1) { display:table-cell; }
+    td { display:none; !important}
+    th { display:none; !important}
+    td:nth-child(1) { display:table-cell; !important}
+    th:nth-child(1) { display:table-cell; !important}
 
 
 }
