@@ -27,19 +27,20 @@ sudo pip3 install virtualenv
 Python3.6 or later
 
 comes with flask
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
+* Click==7.0
+* Flask==1.1.1
+* itsdangerous==1.1.0
+* Jinja2==2.10.3
+* MarkupSafe==1.1.1
+* Werkzeug==0.16.0
 
-pip==19.3.1
-setuptools==45.0.0
-wheel==0.33.6
+package install
+* pip==19.3.1
+* setuptools==45.0.0
+* wheel==0.33.6
 
 Python Wsgi HTTP server
-gunicorn==20.0.4
+* gunicorn==20.0.4
 
 
 ### Installing
@@ -84,7 +85,7 @@ Run locally
 ```
 gunicorn app:app
 ```
-Finally open a browser, go to address showing in terminal (http://127.0.0.1:8000) and wonder
+Finally open a browser, go to address showing in terminal (localhost) and wonder
 
 
 ## Deployment
@@ -96,7 +97,7 @@ https://software-package-explorer.herokuapp.com/
 
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web framework used
 * [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) - Template engine (comes with Flask)
-* [gunicorn](https://gunicorn.org/ - WSGI HTTP Server for running web app locally and on production (Heroku i.e)
+* [gunicorn](https://gunicorn.org/) - WSGI HTTP Server for running web app locally and on production (Heroku i.e)
 * [MarkupSafe](https://pypi.org/project/MarkupSafe/) - Character escaping for safe HTML and XML (comes with Flask)
 * [itsdangerous](https://itsdangerous.palletsprojects.com/en/1.1.x/) - data decode and encode (comes with Flask)
 * [Werkzeug](https://palletsprojects.com/p/werkzeug/) - yet another wsgi lib (comes with Flask)
