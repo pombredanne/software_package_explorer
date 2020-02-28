@@ -6,7 +6,7 @@ label{ font-weight: bold; padding-left: 3px;}
 #packageTable tr {display: none;}
 #showingInfo { padding-top: 10px; padding-left: 2px;}
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
     td { display:none; }
     th { display:none; }
     td:nth-child(1) { display:table-cell; }
