@@ -36,7 +36,7 @@ a {
   background-color: #4CAF50;
 }
 
-.content { padding: 20px 30px 20px 30px; }
+.content { margin: 20px 30px 20px 30px; }
 
 .aboutIngress {
   text-align: justify;
