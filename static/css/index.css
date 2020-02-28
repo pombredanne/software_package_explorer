@@ -1,11 +1,3 @@
-table{ width: 100%; margin-top: 10px; }
-tbody tr:nth-child(odd){ background-color: #f2f2f2; }
-tr{ text-align: left;}
-
-label{ font-weight: bold; padding-left: 3px;}
-#packageTable tr {display: none;}
-#showingInfo { padding-top: 10px; padding-left: 2px;}
-
 @media only screen and (max-width: 600px) {
     td { display:none; }
     th { display:none; }
@@ -14,3 +6,10 @@ label{ font-weight: bold; padding-left: 3px;}
 
 
 }
+table{ width: 100%; margin-top: 10px; }
+tbody tr:nth-child(odd){ background-color: #f2f2f2; }
+tr{ text-align: left;}
+
+label{ font-weight: bold; padding-left: 3px;}
+#packageTable tr {display: none;}
+#showingInfo { padding-top: 10px; padding-left: 2px;}
