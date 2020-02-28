@@ -34,7 +34,7 @@
     <tbody id="packageTable">
       {% for package in packages %}
       <tr>
-        <td><a href="/{{package.name}}">{{ package.name }}</a></td>
+        <td><a href="/{{package.name}}"><div style="width:100%;height:100%">{{ package.name }}</div></a></td>
         <td>{{ package.version }}</td>
         <td>{{ package.status }}</td>
         <td>{{ package.priority }}</td>
