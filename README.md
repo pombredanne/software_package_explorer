@@ -74,7 +74,7 @@ cd software_package_explorer
 ```
 Create virtualenv
 ```
-virtualenv env --python=python
+virtualenv env --python=python3
 source env/bin/activate
 ```
 Install packages via pip
